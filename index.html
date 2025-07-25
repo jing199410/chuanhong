@@ -139,7 +139,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.2);
       width: 300px;
-      max-height: 400px;
+      max-height: 460px;
       overflow-y: auto;
       display: none;
       z-index: 1000;
@@ -167,7 +167,7 @@
       cursor: pointer;
     }
     .checkout-btn {
-      margin-top: 15px;
+      margin-top: 10px;
       padding: 10px;
       background-color: #3a7ca5;
       color: white;
@@ -188,6 +188,7 @@
     <a href="#gallery">作品</a>
     <a href="#contact">聯絡</a>
   </nav>
+
   <header>
     <img src="筌鴻公司標誌設計-Photoroom.png" alt="筌鴻 Logo">
     <div>
@@ -195,14 +196,16 @@
       <p>專業設計服務｜平面設計 × 網頁設計</p>
     </div>
   </header>
+
   <section id="about">
     <h2>關於我們</h2>
     <p>
       筌鴻貿易有限公司（統編：95477932）專注於設計領域，致力於為客戶提供高品質的平面設計與網頁設計解決方案。
-      我們相信設計不僅是視覺的表現，更是品牌價值的延伸。
-      無論是企業識別、行銷素材、網站視覺或介面體驗，筌鴻皆以專業態度與創意精神，協助客戶打造專屬形象。
+      我們相信設計不僅是視覺的表現，更是品牌價值的延伸。無論是企業識別、行銷素材、網站視覺或介面體驗，
+      筌鴻皆以專業態度與創意精神，協助客戶打造專屬形象。
     </p>
   </section>
+
   <section id="services">
     <h2>服務內容</h2>
     <div class="service-group">
@@ -227,6 +230,7 @@
       </div>
     </div>
   </section>
+
   <section id="gallery">
     <h2>作品展示</h2>
     <h3 style="text-align:center; color:#3a7ca5; margin-bottom: 10px;">小圖素材</h3>
@@ -242,6 +246,7 @@
       <img src="品牌設計 (3).jfif" alt="品牌設計 3" />
     </div>
   </section>
+
   <section id="contact">
     <h2>聯絡我們</h2>
     <p>歡迎透過以下方式聯絡我們，讓筌鴻成為您品牌發展的最佳夥伴。</p>
@@ -251,13 +256,19 @@
       <li>地址：台北市設計區創意路88號</li>
     </ul>
   </section>
+
   <div class="footer">
     筌鴻貿易有限公司 © 2025｜統編：95477932
   </div>
+
   <button class="cart-icon" onclick="toggleCart()">🛒</button>
   <div class="cart-popup" id="cartPopup">
     <h4>購物車清單</h4>
     <ul id="cartItems"></ul>
+    <div style="margin-top: 10px;">
+      <input type="text" id="customerName" placeholder="姓名" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
+      <input type="text" id="customerPhone" placeholder="電話" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;">
+    </div>
     <button class="checkout-btn" onclick="checkoutCart()">前往結帳</button>
   </div>
   <script>
@@ -289,14 +300,22 @@
       popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
     }
     function checkoutCart() {
+      const name = document.getElementById('customerName').value.trim();
+      const phone = document.getElementById('customerPhone').value.trim();
       if (cart.length === 0) {
         alert('購物車為空');
         return;
       }
-      alert('感謝您的訂購，我們將盡快與您聯繫！');
+      if (!name || !phone) {
+        alert('請輸入姓名與電話');
+        return;
+      }
+      alert(`感謝您，${name}！我們將致電 ${phone} 與您確認訂單。`);
       cart = [];
       updateCartDisplay();
       toggleCart();
+      document.getElementById('customerName').value = '';
+      document.getElementById('customerPhone').value = '';
     }
   </script>
 </body>
