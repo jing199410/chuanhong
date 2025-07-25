@@ -38,6 +38,12 @@
       padding: 60px 20px;
       text-align: left;
       backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    header img {
+      height: 100px;
     }
     header h1 { font-size: 2.5rem; margin-bottom: 10px; }
     header p { font-size: 1.2rem; }
@@ -95,6 +101,13 @@
     .gallery img:hover { transform: scale(1.05); }
 
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      header img {
+        height: 80px;
+      }
       header h1 { font-size: 2rem; }
       header p { font-size: 1rem; }
       section { padding: 40px 15px; }
@@ -116,9 +129,11 @@
   </nav>
 
   <header>
-    <img src="筌鴻公司標誌設計-Photoroom.png" alt="筌鴻 Logo" style="height: 60px; margin-bottom: 20px;">
-    <h1>筌鴻貿易有限公司</h1>
-    <p>專業設計服務｜平面設計 × 網頁設計</p>
+    <img src="筌鴻公司標誌設計-Photoroom.png" alt="筌鴻 Logo">
+    <div>
+      <h1>筌鴻貿易有限公司</h1>
+      <p>專業設計服務｜平面設計 × 網頁設計</p>
+    </div>
   </header>
 
   <section id="about">
