@@ -111,42 +111,6 @@
     button.order-btn:hover {
       background-color: #2d5e80;
     }
-    .cart-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #3a7ca5;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    .cart-popup {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      width: 300px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      padding: 15px;
-      display: none;
-      z-index: 1001;
-    }
-    .cart-popup ul { list-style: none; padding-left: 0; }
-    .cart-popup li { display: flex; justify-content: space-between; margin-bottom: 10px; }
-    .checkout-btn {
-      width: 100%;
-      background: #3a7ca5;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -176,73 +140,74 @@
   </nav>
 
   <header>
-    <img src="筌鴻公司標誌設計-Photoroom.png" alt="公司LOGO">
+    <img src="筌鴻公司標誌設計-Photoroom.png" alt="筌鴻 Logo">
     <div>
       <h1>筌鴻貿易有限公司</h1>
       <p>專業設計服務｜平面設計 × 網頁設計</p>
     </div>
   </header>
 
-  <!-- 作品展示區加入小圖與品牌設計 -->
+  <section id="about">
+    <h2>關於我們</h2>
+    <p>
+      筌鴻貿易有限公司（統編：95477932）專注於設計領域，致力於為客戶提供高品質的平面設計與網頁設計解決方案。
+      我們相信設計不僅是視覺的表現，更是品牌價值的延伸。無論是企業識別、行銷素材、網站視覺或介面體驗，
+      筌鴻皆以專業態度與創意精神，協助客戶打造專屬形象。
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>服務內容</h2>
+    <div class="service-group">
+      <div class="service-item">
+        <h3>素材包方案</h3>
+        <ul>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>小圖素材包｜訂閱12個月：NT$10,000</span> <button class="order-btn" onclick="alert('您已選擇小圖素材包（12個月）')">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>小圖素材包｜訂閱20個月：NT$16,000</span> <button class="order-btn" onclick="alert('您已選擇小圖素材包（20個月）')">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>音檔素材包｜訂閱3個月：NT$5,000</span> <button class="order-btn" onclick="alert('您已選擇音檔素材包（3個月）')">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>音檔素材包｜訂閱7個月：NT$10,000</span> <button class="order-btn" onclick="alert('您已選擇音檔素材包（7個月）')">立即下單</button></li>
+        </ul>
+      </div>
+      <div class="service-item">
+        <h3>設計服務方案</h3>
+        <ul>
+          <li>創業版簡易設計方案：NT$10,000</li>
+          <li>品牌識別設計：NT$30,000 ~ NT$70,000</li>
+          <li>品牌形象設計：NT$15,000 ~ NT$30,000</li>
+          <li>廣告主視覺設計（平面）：NT$10,000 ~ NT$40,000</li>
+          <li>廣告主視覺設計（活動）：NT$60,000 起</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="gallery">
     <h2>作品展示</h2>
     <h3 style="text-align:center; color:#3a7ca5; margin-bottom: 10px;">小圖素材</h3>
     <div class="gallery">
-      <img src="pexels-evie-shaffer-1259279-2395251.jpg" alt="粉紅葉圖">
-      <img src="pexels-evie-shaffer-1259279-2395250.jpg" alt="綠葉圖">
-      <img src="pexels-evie-shaffer-1259279-2395255.jpg" alt="橘色花圖">
+      <img src="pexels-evie-shaffer-1259279-2395251.jpg" alt="粉紅色葉片圖" />
+      <img src="pexels-evie-shaffer-1259279-2395250.jpg" alt="綠葉與白花圖" />
+      <img src="pexels-evie-shaffer-1259279-2395255.jpg" alt="橘色乾燥花圖" />
     </div>
     <h3 style="text-align:center; color:#3a7ca5; margin-top: 40px; margin-bottom: 10px;">品牌設計</h3>
     <div class="gallery">
-      <img src="品牌設計 (1).jfif" alt="品牌設計1">
-      <img src="品牌設計 (2).jfif" alt="品牌設計2">
-      <img src="品牌設計 (3).jfif" alt="品牌設計3">
+      <img src="品牌設計 (1).jfif" alt="品牌設計 1" />
+      <img src="品牌設計 (2).jfif" alt="品牌設計 2" />
+      <img src="品牌設計 (3).jfif" alt="品牌設計 3" />
     </div>
   </section>
 
-  <!-- 保留購物車功能區 -->
-  <div class="cart-icon" onclick="toggleCart()">🛒 購物車 (<span id="cart-count">0</span>)</div>
-  <div class="cart-popup" id="cart">
-    <h3>購物車內容</h3>
-    <ul id="cart-items"></ul>
-    <p>總金額：NT$<span id="total-amount">0</span></p>
-    <button class="checkout-btn" onclick="checkout()">前往結帳</button>
+  <section id="contact">
+    <h2>聯絡我們</h2>
+    <p>歡迎透過以下方式聯絡我們，讓筌鴻成為您品牌發展的最佳夥伴</p>
+    <ul>
+      <li>Email：service@chuanhong-design.com</li>
+
+    </ul>
+  </section>
+
+  <div class="footer">
+    筌鴻貿易有限公司 © 2025｜統編：95477932
   </div>
-
-  <script>
-    const cart = [];
-
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      updateCart();
-    }
-
-    function updateCart() {
-      const cartItems = document.getElementById('cart-items');
-      const cartCount = document.getElementById('cart-count');
-      const totalAmount = document.getElementById('total-amount');
-
-      cartItems.innerHTML = '';
-      let total = 0;
-      cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.textContent = `${item.name} - NT$${item.price}`;
-        cartItems.appendChild(li);
-        total += item.price;
-      });
-
-      cartCount.textContent = cart.length;
-      totalAmount.textContent = total;
-    }
-
-    function toggleCart() {
-      const cartBox = document.getElementById('cart');
-      cartBox.style.display = cartBox.style.display === 'block' ? 'none' : 'block';
-    }
-
-    function checkout() {
-      alert('感謝您的訂購！我們將儘快與您聯繫。');
-    }
-  </script>
 </body>
 </html>
