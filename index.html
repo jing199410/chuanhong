@@ -111,23 +111,73 @@
     button.order-btn:hover {
       background-color: #2d5e80;
     }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      header img {
-        height: 80px;
-      }
-      header h1 { font-size: 2rem; }
-      header p { font-size: 1rem; }
-      section { padding: 40px 15px; }
-      .service-item { flex: 1 1 100%; }
-      .gallery img { max-width: 90%; }
+    .cart-icon {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #3a7ca5;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 999;
     }
-    @media (max-width: 480px) {
-      .gallery img { max-width: 100%; }
-      section h2 { font-size: 1.5rem; }
+    .cart-popup {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      width: 300px;
+      max-height: 400px;
+      overflow-y: auto;
+      display: none;
+      z-index: 1000;
+    }
+    .cart-popup h4 {
+      margin-bottom: 10px;
+      color: #3a7ca5;
+    }
+    .cart-popup ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .cart-popup li {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-popup button.remove-btn {
+      background: none;
+      border: none;
+      color: #c00;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .checkout-btn {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #3a7ca5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .checkout-btn:hover {
+      background-color: #2d5e80;
     }
   </style>
 </head>
@@ -138,7 +188,6 @@
     <a href="#gallery">作品</a>
     <a href="#contact">聯絡</a>
   </nav>
-
   <header>
     <img src="筌鴻公司標誌設計-Photoroom.png" alt="筌鴻 Logo">
     <div>
@@ -146,26 +195,24 @@
       <p>專業設計服務｜平面設計 × 網頁設計</p>
     </div>
   </header>
-
   <section id="about">
     <h2>關於我們</h2>
     <p>
       筌鴻貿易有限公司（統編：95477932）專注於設計領域，致力於為客戶提供高品質的平面設計與網頁設計解決方案。
-      我們相信設計不僅是視覺的表現，更是品牌價值的延伸。無論是企業識別、行銷素材、網站視覺或介面體驗，
-      筌鴻皆以專業態度與創意精神，協助客戶打造專屬形象。
+      我們相信設計不僅是視覺的表現，更是品牌價值的延伸。
+      無論是企業識別、行銷素材、網站視覺或介面體驗，筌鴻皆以專業態度與創意精神，協助客戶打造專屬形象。
     </p>
   </section>
-
   <section id="services">
     <h2>服務內容</h2>
     <div class="service-group">
       <div class="service-item">
         <h3>素材包方案</h3>
         <ul>
-          <li style="display:flex; justify-content:space-between; align-items:center;"><span>小圖素材包｜訂閱12個月：NT$10,000</span> <button class="order-btn" onclick="alert('您已選擇小圖素材包（12個月）')">立即下單</button></li>
-          <li style="display:flex; justify-content:space-between; align-items:center;"><span>小圖素材包｜訂閱20個月：NT$16,000</span> <button class="order-btn" onclick="alert('您已選擇小圖素材包（20個月）')">立即下單</button></li>
-          <li style="display:flex; justify-content:space-between; align-items:center;"><span>音檔素材包｜訂閱3個月：NT$5,000</span> <button class="order-btn" onclick="alert('您已選擇音檔素材包（3個月）')">立即下單</button></li>
-          <li style="display:flex; justify-content:space-between; align-items:center;"><span>音檔素材包｜訂閱7個月：NT$10,000</span> <button class="order-btn" onclick="alert('您已選擇音檔素材包（7個月）')">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>小圖素材包｜訂閱12個月：NT$10,000</span> <button class="order-btn">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>小圖素材包｜訂閱20個月：NT$16,000</span> <button class="order-btn">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>音檔素材包｜訂閱3個月：NT$5,000</span> <button class="order-btn">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>音檔素材包｜訂閱7個月：NT$10,000</span> <button class="order-btn">立即下單</button></li>
         </ul>
       </div>
       <div class="service-item">
@@ -180,7 +227,6 @@
       </div>
     </div>
   </section>
-
   <section id="gallery">
     <h2>作品展示</h2>
     <h3 style="text-align:center; color:#3a7ca5; margin-bottom: 10px;">小圖素材</h3>
@@ -196,18 +242,62 @@
       <img src="品牌設計 (3).jfif" alt="品牌設計 3" />
     </div>
   </section>
-
   <section id="contact">
     <h2>聯絡我們</h2>
-    <p>歡迎透過以下方式聯絡我們，讓筌鴻成為您品牌發展的最佳夥伴</p>
+    <p>歡迎透過以下方式聯絡我們，讓筌鴻成為您品牌發展的最佳夥伴。</p>
     <ul>
       <li>Email：service@chuanhong-design.com</li>
-
+      <li>電話：02-1234-5678</li>
+      <li>地址：台北市設計區創意路88號</li>
     </ul>
   </section>
-
   <div class="footer">
     筌鴻貿易有限公司 © 2025｜統編：95477932
   </div>
+  <button class="cart-icon" onclick="toggleCart()">🛒</button>
+  <div class="cart-popup" id="cartPopup">
+    <h4>購物車清單</h4>
+    <ul id="cartItems"></ul>
+    <button class="checkout-btn" onclick="checkoutCart()">前往結帳</button>
+  </div>
+  <script>
+    let cart = [];
+    document.querySelectorAll('.order-btn').forEach(button => {
+      button.addEventListener('click', function () {
+        const itemText = this.parentElement.querySelector('span')?.innerText || this.previousSibling?.textContent;
+        if (itemText) {
+          cart.push(itemText);
+          updateCartDisplay();
+        }
+      });
+    });
+    function updateCartDisplay() {
+      const cartList = document.getElementById('cartItems');
+      cartList.innerHTML = '';
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item} <button class='remove-btn' onclick='removeFromCart(${index})'>移除</button>`;
+        cartList.appendChild(li);
+      });
+    }
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartDisplay();
+    }
+    function toggleCart() {
+      const popup = document.getElementById('cartPopup');
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
+    function checkoutCart() {
+      if (cart.length === 0) {
+        alert('購物車為空');
+        return;
+      }
+      alert('感謝您的訂購，我們將盡快與您聯繫！');
+      cart = [];
+      updateCartDisplay();
+      toggleCart();
+    }
+  </script>
 </body>
 </html>
