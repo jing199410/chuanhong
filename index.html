@@ -175,8 +175,32 @@
     <a href="#contact">聯絡</a>
   </nav>
 
-  <!-- 內容保持不變 -->
+  <header>
+    <img src="筌鴻公司標誌設計-Photoroom.png" alt="公司LOGO">
+    <div>
+      <h1>筌鴻貿易有限公司</h1>
+      <p>專業設計服務｜平面設計 × 網頁設計</p>
+    </div>
+  </header>
 
+  <!-- 作品展示區加入小圖與品牌設計 -->
+  <section id="gallery">
+    <h2>作品展示</h2>
+    <h3 style="text-align:center; color:#3a7ca5; margin-bottom: 10px;">小圖素材</h3>
+    <div class="gallery">
+      <img src="pexels-evie-shaffer-1259279-2395251.jpg" alt="粉紅葉圖">
+      <img src="pexels-evie-shaffer-1259279-2395250.jpg" alt="綠葉圖">
+      <img src="pexels-evie-shaffer-1259279-2395255.jpg" alt="橘色花圖">
+    </div>
+    <h3 style="text-align:center; color:#3a7ca5; margin-top: 40px; margin-bottom: 10px;">品牌設計</h3>
+    <div class="gallery">
+      <img src="品牌設計 (1).jfif" alt="品牌設計1">
+      <img src="品牌設計 (2).jfif" alt="品牌設計2">
+      <img src="品牌設計 (3).jfif" alt="品牌設計3">
+    </div>
+  </section>
+
+  <!-- 保留購物車功能區 -->
   <div class="cart-icon" onclick="toggleCart()">🛒 購物車 (<span id="cart-count">0</span>)</div>
   <div class="cart-popup" id="cart">
     <h3>購物車內容</h3>
@@ -219,14 +243,6 @@
     function checkout() {
       alert('感謝您的訂購！我們將儘快與您聯繫。');
     }
-
-    document.querySelectorAll('.order-btn').forEach(btn => {
-      const text = btn.previousElementSibling.textContent;
-      const price = parseInt(text.match(/NT\$([0-9,]+)/)[1].replace(',', ''));
-      btn.addEventListener('click', () => {
-        addToCart(text, price);
-      });
-    });
   </script>
 </body>
 </html>
