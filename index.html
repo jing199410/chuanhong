@@ -1,9 +1,214 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <!-- ...完整 HTML 內容省略，實際應為 Canvas 中最新內容... -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>筌鴻貿易有限公司</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: url('pexels-jplenio-1103970.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    nav {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
+      color: #3a7ca5;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background-color: rgba(58, 124, 165, 0.85);
+      color: white;
+      padding: 60px 20px;
+      text-align: left;
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    header img {
+      height: 100px;
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    header p { font-size: 1.2rem; }
+    section {
+      padding: 60px 20px;
+      max-width: 960px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #3a7ca5;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .services, .service-group, .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .service-item {
+      flex: 1 1 280px;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .service-item:hover { transform: translateY(-5px); }
+    .footer {
+      background: rgba(58, 124, 165, 0.9);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .gallery img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+    button.order-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #3a7ca5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button.order-btn:hover {
+      background-color: #2d5e80;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      header img {
+        height: 80px;
+      }
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      section { padding: 40px 15px; }
+      .service-item { flex: 1 1 100%; }
+      .gallery img { max-width: 90%; }
+    }
+    @media (max-width: 480px) {
+      .gallery img { max-width: 100%; }
+      section h2 { font-size: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-  <!-- 已完成服務與作品下單區塊 -->
+  <nav>
+    <a href="#about">關於我們</a>
+    <a href="#services">服務</a>
+    <a href="#gallery">作品</a>
+    <a href="#contact">聯絡</a>
+  </nav>
+
+  <header>
+    <img src="筌鴻公司標誌設計-Photoroom.png" alt="筌鴻 Logo">
+    <div>
+      <h1>筌鴻貿易有限公司</h1>
+      <p>專業設計服務｜平面設計 × 網頁設計</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>關於我們</h2>
+    <p>
+      筌鴻貿易有限公司（統編：95477932）專注於設計領域，致力於為客戶提供高品質的平面設計與網頁設計解決方案。
+      我們相信設計不僅是視覺的表現，更是品牌價值的延伸。無論是企業識別、行銷素材、網站視覺或介面體驗，
+      筌鴻皆以專業態度與創意精神，協助客戶打造專屬形象。
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>服務內容</h2>
+    <div class="service-group">
+      <div class="service-item">
+        <h3>素材包方案</h3>
+        <ul>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>小圖素材包｜訂閱12個月：NT$10,000</span> <button class="order-btn" onclick="alert('您已選擇小圖素材包（12個月）')">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>小圖素材包｜訂閱20個月：NT$16,000</span> <button class="order-btn" onclick="alert('您已選擇小圖素材包（20個月）')">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>音檔素材包｜訂閱3個月：NT$5,000</span> <button class="order-btn" onclick="alert('您已選擇音檔素材包（3個月）')">立即下單</button></li>
+          <li style="display:flex; justify-content:space-between; align-items:center;"><span>音檔素材包｜訂閱7個月：NT$10,000</span> <button class="order-btn" onclick="alert('您已選擇音檔素材包（7個月）')">立即下單</button></li>
+        </ul>
+      </div>
+      <div class="service-item">
+        <h3>設計服務方案</h3>
+        <ul>
+          <li>創業版簡易設計方案：NT$10,000</li>
+          <li>品牌識別設計：NT$30,000 ~ NT$70,000</li>
+          <li>品牌形象設計：NT$15,000 ~ NT$30,000</li>
+          <li>廣告主視覺設計（平面）：NT$10,000 ~ NT$40,000</li>
+          <li>廣告主視覺設計（活動）：NT$60,000 起</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>作品展示</h2>
+    <h3 style="text-align:center; color:#3a7ca5; margin-bottom: 10px;">小圖素材</h3>
+    <div class="gallery">
+      <img src="pexels-evie-shaffer-1259279-2395251.jpg" alt="粉紅色葉片圖" />
+      <img src="pexels-evie-shaffer-1259279-2395250.jpg" alt="綠葉與白花圖" />
+      <img src="pexels-evie-shaffer-1259279-2395255.jpg" alt="橘色乾燥花圖" />
+    </div>
+    <h3 style="text-align:center; color:#3a7ca5; margin-top: 40px; margin-bottom: 10px;">品牌設計</h3>
+    <div class="gallery">
+      <img src="品牌設計 (1).jfif" alt="品牌設計 1" />
+      <img src="品牌設計 (2).jfif" alt="品牌設計 2" />
+      <img src="品牌設計 (3).jfif" alt="品牌設計 3" />
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>聯絡我們</h2>
+    <p>歡迎透過以下方式聯絡我們，讓筌鴻成為您品牌發展的最佳夥伴。</p>
+    <ul>
+      <li>Email：service@chuanhong-design.com</li>
+      <li>電話：02-1234-5678</li>
+      <li>地址：台北市設計區創意路88號</li>
+    </ul>
+  </section>
+
+  <div class="footer">
+    筌鴻貿易有限公司 © 2025｜統編：95477932
+  </div>
 </body>
 </html>
